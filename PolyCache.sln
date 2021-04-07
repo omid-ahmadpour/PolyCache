@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyCache", "PolyCache\PolyCache.csproj", "{E50A5712-42AF-4BFA-BD7B-29D5A51E0E6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E50A5712-42AF-4BFA-BD7B-29D5A51E0E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E50A5712-42AF-4BFA-BD7B-29D5A51E0E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E50A5712-42AF-4BFA-BD7B-29D5A51E0E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E50A5712-42AF-4BFA-BD7B-29D5A51E0E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C416473-B91B-4A66-ABD3-E3A267194AC8}
+	EndGlobalSection
+EndGlobal
