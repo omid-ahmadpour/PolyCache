@@ -11,7 +11,6 @@ namespace PolyCache
         {
             services.AddScoped<IStaticCacheManager, DistributedCacheManager>();
 
-            //add configuration parameters
             var appSettings = new AppSettings();
             configuration.Bind(appSettings);
             services.AddSingleton(appSettings);
