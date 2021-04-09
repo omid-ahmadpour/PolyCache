@@ -8,7 +8,7 @@ namespace PolyCache
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddDistributedCache(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPolyCache(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IStaticCacheManager, DistributedCacheManager>();
 
