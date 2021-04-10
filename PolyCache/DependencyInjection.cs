@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using PolyCache.Cache;
 using PolyCache.Configuration;
 
@@ -9,6 +11,8 @@ namespace PolyCache
     {
         public static IServiceCollection AddPolyCache(this IServiceCollection services, IConfiguration configuration)
         {
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddScoped<IStaticCacheManager, DistributedCacheManager>();
 
             var appSettings = new AppSettings();
