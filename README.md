@@ -20,9 +20,9 @@ If you like or are using this project to learn or using PolyCache package, pleas
 # DistributedCacheConfig
 
 ## DistributedCacheType You can choose one of the implementations:
-###  Memory
-###  SQL Server
-###  Redis
+* Redis
+* Memory
+* SQL Server
 
 ## SchemaName (optional)
 #### This setting is only used in conjunction with SQL Server.
