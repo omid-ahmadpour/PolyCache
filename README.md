@@ -46,6 +46,17 @@ CacheConfig": {
   }
   ```
   
+  # Redis Docker Compose
+  ## for using redis, do the following to install
+  
+  ```ruby
+  1. Download and put the redis-docker-compose.yml in a of your operating system(There is inside the sample project)
+  2. Open your Terminal
+  3. Go to the redis-docker-compose.yml file path
+  4. Run docker-compose -f redis-docker-compose.yml up
+  5. Now Redis is ready on Docker
+    ```
+  
   ### The source of a project that used PolyCache is also included.
 
 > [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
