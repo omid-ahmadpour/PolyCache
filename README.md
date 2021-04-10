@@ -19,7 +19,8 @@ If you like or are using this project to learn or using PolyCache package, pleas
 
 # DistributedCacheConfig
 
-## DistributedCacheType You can choose one of the implementations:
+## DistributedCacheType
+#### You can choose one of the implementations:
 * Redis
 * Memory
 * SQL Server
