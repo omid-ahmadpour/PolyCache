@@ -43,6 +43,6 @@ CacheConfig": {
   }
   ```
   
-  ### The source of a project that used NeoBus is also included.
+  ### The source of a project that used PolyCache is also included.
 
 > [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
