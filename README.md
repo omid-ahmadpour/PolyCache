@@ -55,7 +55,7 @@ CacheConfig": {
   3. Go to the redis-docker-compose.yml file path
   4. Run docker-compose -f redis-docker-compose.yml up
   5. Now Redis is ready on Docker
-    ```
+   ```
   
   ### The source of a project that used PolyCache is also included.
 
