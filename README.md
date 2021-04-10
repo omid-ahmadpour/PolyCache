@@ -1,6 +1,9 @@
 # PolyCache
 Redis Cache NuGet package
 
+## Give a Star! ⭐
+If you like or are using this package or start your solution, please give it a star. Thanks!
+
 ## Installing PolyCache
 
 ```ruby
