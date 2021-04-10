@@ -2,7 +2,7 @@
 Redis Cache NuGet package
 
 ## Give a Star! ⭐
-If you like or are using this package or start your solution, please give it a star. Thanks!
+If you like or are using this project to learn or using PolyCache package, please give it a star. Thanks!
 
 ## Installing PolyCache
 
