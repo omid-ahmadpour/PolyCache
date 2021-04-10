@@ -19,7 +19,6 @@ namespace PolyCache
 
             var distributedCacheConfig = appSettings.DistributedCacheConfig;
 
-            //static cache manager
             if (appSettings.DistributedCacheConfig.Enabled)
             {
                 services.AddScoped<ILocker, DistributedCacheManager>();
