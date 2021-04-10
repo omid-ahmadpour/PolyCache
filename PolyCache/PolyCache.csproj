@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Redis Cache NuGet package.</Description>
   </PropertyGroup>
 
   <ItemGroup>
