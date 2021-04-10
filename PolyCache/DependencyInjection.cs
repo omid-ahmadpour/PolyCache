@@ -13,44 +13,49 @@ namespace PolyCache
         {
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddScoped<IStaticCacheManager, DistributedCacheManager>();
-
             var appSettings = new AppSettings();
             configuration.Bind(appSettings);
             services.AddSingleton(appSettings);
 
             var distributedCacheConfig = appSettings.DistributedCacheConfig;
 
+            //static cache manager
+            if (appSettings.DistributedCacheConfig.Enabled)
+            {
+                services.AddScoped<ILocker, DistributedCacheManager>();
+                services.AddScoped<IStaticCacheManager, DistributedCacheManager>();
+            }
+            else
+            {
+                services.AddSingleton<ILocker, MemoryCacheManager>();
+                services.AddSingleton<IStaticCacheManager, MemoryCacheManager>();
+            }
+
             if (!distributedCacheConfig.Enabled)
                 return services;
 
-            services.AddStackExchangeRedisCache(options =>
+            switch (distributedCacheConfig.DistributedCacheType)
             {
-                options.Configuration = distributedCacheConfig.ConnectionString;
-            });
+                case DistributedCacheType.Memory:
+                    services.AddDistributedMemoryCache();
+                    break;
 
-            //switch (distributedCacheConfig.DistributedCacheType)
-            //{
-            //    case DistributedCacheType.Memory:
-            //        services.AddDistributedMemoryCache();
-            //        break;
+                case DistributedCacheType.SqlServer:
+                    services.AddDistributedSqlServerCache(options =>
+                    {
+                        options.ConnectionString = distributedCacheConfig.ConnectionString;
+                        options.SchemaName = distributedCacheConfig.SchemaName;
+                        options.TableName = distributedCacheConfig.TableName;
+                    });
+                    break;
 
-            //    case DistributedCacheType.SqlServer:
-            //        services.AddDistributedSqlServerCache(options =>
-            //        {
-            //            options.ConnectionString = distributedCacheConfig.ConnectionString;
-            //            options.SchemaName = distributedCacheConfig.SchemaName;
-            //            options.TableName = distributedCacheConfig.TableName;
-            //        });
-            //        break;
-
-            //    case DistributedCacheType.Redis:
-            //        services.AddStackExchangeRedisCache(options =>
-            //        {
-            //            options.Configuration = distributedCacheConfig.ConnectionString;
-            //        });
-            //        break;
-            //}
+                case DistributedCacheType.Redis:
+                    services.AddStackExchangeRedisCache(options =>
+                    {
+                        options.Configuration = distributedCacheConfig.ConnectionString;
+                    });
+                    break;
+            }
 
             return services;
         }
