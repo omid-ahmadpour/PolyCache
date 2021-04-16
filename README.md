@@ -53,7 +53,7 @@ If you like or are using this project to learn or using PolyCache package, pleas
   ```ruby
   1. Install Docker on your OS(operating system)
   2. Download and put the redis-docker-compose.yml file in a path of your OS(There is inside the sample project)
-  3. Open your Terminal ad administrator
+  3. Open your Terminal as administrator
   4. Go to the redis-docker-compose.yml file path
   5. Run docker-compose -f redis-docker-compose.yml up
   6. Now Redis is ready on Docker
