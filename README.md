@@ -33,7 +33,7 @@ If you like or are using this project to learn or using PolyCache package, pleas
 
 ## Put the following configuration in appsettings.json.
 ```
-CacheConfig": {
+"CacheConfig": {
     "DefaultCacheTime": 60,
     "ShortTermCacheTime": 3,
     "BundledFilesCacheTime": 120
