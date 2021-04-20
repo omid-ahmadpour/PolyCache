@@ -47,7 +47,7 @@ If you like or are using this project to learn or using PolyCache package, pleas
   }
   ```
   
-  ## inject IStaticCacheManager interface and use it
+  ## Inject IStaticCacheManager interface and use it
   
   ### The source of a project that used PolyCache is also included.
 > [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
