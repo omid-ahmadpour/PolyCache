@@ -1,5 +1,5 @@
 # PolyCache
-Distributed .Net Cache package
+A Distributed Cache manager package for .Net Core Projects.
 
 ## Give a Star! ⭐
 If you like or are using this project to learn or using PolyCache package, please give it a star. Thanks!
