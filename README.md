@@ -47,6 +47,11 @@ If you like or are using this project to learn or using PolyCache package, pleas
   }
   ```
   
+  ## inject IStaticCacheManager interface and use it
+  
+  ### The source of a project that used PolyCache is also included.
+> [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
+  
   # Redis Docker Compose
   ## for using redis, do the following to install
   
@@ -58,7 +63,3 @@ If you like or are using this project to learn or using PolyCache package, pleas
   5. Run docker-compose -f redis-docker-compose.yml up
   6. Now Redis is ready on Docker
    ```
-  
-  ### The source of a project that used PolyCache is also included.
-
-> [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
