@@ -157,6 +157,20 @@ namespace PolyCache.Cache
             return result;
         }
 
+        public async Task<T> GetAsync<T>(CacheKey key)
+        {
+            if ((key?.CacheTime ?? 0) <= 0)
+                return default;
+
+            var result = _memoryCache.Get(key.Key);
+
+            //do not cache null value
+            if (result == null)
+                await RemoveAsync(key);
+
+            return default;
+        }
+
         /// <summary>
         /// Get a cached item. If it's not in the cache yet, then load and cache it
         /// </summary>

@@ -32,6 +32,8 @@ namespace PolyCache.Cache
         /// </returns>
         Task<T> GetAsync<T>(CacheKey key, Func<T> acquire);
 
+        Task<T> GetAsync<T>(CacheKey key);
+
         /// <summary>
         /// Get a cached item. If it's not in the cache yet, then load and cache it
         /// </summary>
