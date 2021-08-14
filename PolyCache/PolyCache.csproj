@@ -4,6 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Redis Cache NuGet package.</Description>
+    <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/omid-ahmadpour/PolyCache</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/omid-ahmadpour/PolyCache</RepositoryUrl>
+    <PackageTags>cache</PackageTags>
+    <PackageReleaseNotes>add some other method to get from cache.</PackageReleaseNotes>
+    <PackageIcon>PolyCache.JPG</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +25,13 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Nito.AsyncEx.Coordination" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Omid\Desktop\PolyCache.JPG">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
