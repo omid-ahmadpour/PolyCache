@@ -1,65 +1,84 @@
-# PolyCache
-A Distributed Cache manager package for .Net Core Projects.
+# PolyCache - Distributed Cache Manager for .Net Core Projects
 
-## Give a Star! ⭐
-If you like or are using this project to learn or using PolyCache package, please give it a star. Thanks!
+PolyCache is a powerful distributed cache manager package designed specifically for .Net Core projects. It allows you to efficiently manage and store cached data, enhancing the performance of your applications. If you find PolyCache helpful for your project or learning experience, consider giving it a star ⭐. Your support is appreciated!
 
-## Installing PolyCache
+## Installation
 
-```ruby
+To get started with PolyCache, you can easily install it via NuGet Package Manager:
+
+```shell
 > Install-Package PolyCache
 ```
 
-## Registering PolyCache
-### in Startup -> ConfigureServices
+## Getting Started
 
-```ruby
-> services.AddPolyCache(Configuration);
+To use PolyCache, you need to register it in your application's Startup class by adding the following code to the `ConfigureServices` method:
+
+```csharp
+services.AddPolyCache(Configuration);
 ```
 
-# DistributedCacheConfig
+## Configuration
 
-## DistributedCacheType
-#### You can choose one of the implementations:
-* Redis
-* Memory
-* SQL Server
+PolyCache provides various options for configuring your distributed cache. You can choose from the following cache types:
 
-## SchemaName (optional)
-#### This setting is only used in conjunction with SQL Server.
+- Redis
+- Memory
+- SQL Server
 
-## TableName (optional)
-#### This setting is only used in conjunction with SQL Server. SQL Server database name.
+### DistributedCacheConfig
 
-## Put the following configuration in appsettings.json.
-```
+#### DistributedCacheType
+
+Select the cache implementation you want to use from the available options.
+
+#### SchemaName (optional)
+
+This setting is only required when using SQL Server as your cache storage.
+
+#### TableName (optional)
+
+Specify the SQL Server database table name where your cache data will be stored.
+
+To configure these options, add the following configuration to your `appsettings.json` file:
+
+```json
 "CacheConfig": {
     "DefaultCacheTime": 60,
     "ShortTermCacheTime": 3,
     "BundledFilesCacheTime": 120
-  },
-  "DistributedCacheConfig": {
+},
+"DistributedCacheConfig": {
     "DistributedCacheType": "redis",
     "Enabled": true,
     "ConnectionString": "127.0.0.1:6379,ssl=False",
     "SchemaName": "dbo",
     "TableName": "DistributedCache"
-  }
-  ```
-  
-  ## Inject IStaticCacheManager interface and use it
-  
-  ### The source of a project that used PolyCache is also included.
-> [Sample For Use PolyCache](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample)
-  
-  # Redis Docker Compose
-  ## for using redis, do the following to install
-  
-  ```ruby
-  1. Install Docker on your OS(operating system)
-  2. Download and put the redis-docker-compose.yml file in a path of your OS(There is inside the sample project)
-  3. Open your Terminal as administrator
-  4. Go to the redis-docker-compose.yml file path
-  5. Run docker-compose -f redis-docker-compose.yml up
-  6. Now Redis is ready on Docker
+}
+```
+
+## Usage
+
+Once you've configured PolyCache, you can inject the `IStaticCacheManager` interface into your application and use it to cache data efficiently. A sample project that demonstrates the usage of PolyCache is available in our [GitHub repository](https://github.com/omid-ahmadpour/PolyCache/tree/master/Sample).
+
+## Setting Up Redis with Docker Compose
+
+If you plan to use Redis as your cache storage, follow these steps to set it up with Docker Compose:
+
+1. Install Docker on your operating system.
+
+2. Download the `redis-docker-compose.yml` file from the sample project and place it in a convenient directory on your system.
+
+3. Open your terminal as an administrator.
+
+4. Navigate to the directory where you placed the `redis-docker-compose.yml` file.
+
+5. Run the following command to start Redis in a Docker container:
+
+   ```shell
+   docker-compose -f redis-docker-compose.yml up
    ```
+
+6. Redis is now ready to use within your Docker environment.
+
+Enjoy the benefits of PolyCache in your .Net Core projects and optimize your application's performance with ease!
