@@ -11,6 +11,7 @@
     <PackageReleaseNotes>add some other method to get from cache.</PackageReleaseNotes>
     <PackageIcon>PolyCache.png</PackageIcon>
     <PackageIconUrl />
+	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
