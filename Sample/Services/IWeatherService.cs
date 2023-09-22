@@ -5,6 +5,6 @@ namespace Sample.Services
 {
     public interface IWeatherService
     {
-        Task<IEnumerable<WeatherForecast>> GetWeatherAsync();
+        Task<IEnumerable<WeatherForecast>> GetWeatherAsync(string cityName);
     }
 }

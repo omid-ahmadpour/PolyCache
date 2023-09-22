@@ -22,10 +22,10 @@ namespace Sample.Services
             this.staticCacheManager = staticCacheManager ?? throw new ArgumentNullException(nameof(staticCacheManager));
         }
 
-        public async Task<IEnumerable<WeatherForecast>> GetWeatherAsync()
+        public async Task<IEnumerable<WeatherForecast>> GetWeatherAsync(string cityName)
         {
             var result = await staticCacheManager.GetWithExpireTimeAsync(
-                new CacheKey(CachePrefix),
+                new CacheKey(CachePrefix + cityName),
                 CacheExpiryTime,
                 async () => await GetWeather());
 

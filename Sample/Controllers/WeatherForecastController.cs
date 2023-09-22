@@ -17,13 +17,10 @@ namespace Sample.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
         private readonly IWeatherService weatherService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger,
-                                         IWeatherService weatherService)
+        public WeatherForecastController(IWeatherService weatherService)
         {
-            _logger = logger;
             this.weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
         }
 
@@ -41,9 +38,9 @@ namespace Sample.Controllers
         }
 
         [HttpGet("cache")]
-        public async Task<IEnumerable<WeatherForecast>> GetFromCache()
+        public async Task<IEnumerable<WeatherForecast>> GetFromCache(string cityName)
         {
-            var result = await weatherService.GetWeatherAsync();
+            var result = await weatherService.GetWeatherAsync(cityName);
             return result;
         }
     }
