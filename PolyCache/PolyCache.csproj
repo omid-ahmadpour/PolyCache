@@ -8,13 +8,17 @@
     <PackageProjectUrl>https://github.com/omid-ahmadpour/PolyCache</PackageProjectUrl>
     <RepositoryUrl>https://github.com/omid-ahmadpour/PolyCache</RepositoryUrl>
     <PackageTags>cache</PackageTags>
-    <PackageReleaseNotes>add some other method to get from cache.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update to .NET 7.0</PackageReleaseNotes>
     <PackageIcon>PolyCache.png</PackageIcon>
     <PackageIconUrl />
-	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+	  <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\PolyCache.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
