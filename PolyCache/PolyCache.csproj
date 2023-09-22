@@ -9,9 +9,16 @@
     <RepositoryUrl>https://github.com/omid-ahmadpour/PolyCache</RepositoryUrl>
     <PackageTags>cache</PackageTags>
     <PackageReleaseNotes>add some other method to get from cache.</PackageReleaseNotes>
-    <!--<PackageIcon>PolyCache.JPG</PackageIcon>-->
+    <PackageIcon>PolyCache.png</PackageIcon>
     <PackageIconUrl />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\PolyCache.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
