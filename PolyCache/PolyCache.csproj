@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Redis Cache NuGet package.</Description>
+    <Description>A Distributed Cache manager package for .Net Core Projects.</Description>
     <Version>1.2.0</Version>
     <PackageProjectUrl>https://github.com/omid-ahmadpour/PolyCache</PackageProjectUrl>
     <RepositoryUrl>https://github.com/omid-ahmadpour/PolyCache</RepositoryUrl>
