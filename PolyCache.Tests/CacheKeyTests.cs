@@ -10,9 +10,9 @@ namespace PolyCache.Tests
         {
             var cacheKey = new CacheKey("testKey", "prefix1", "prefix2");
 
-            Assert.AreEqual("testKey", cacheKey.Key);
-            Assert.Contains("prefix1", cacheKey.Prefixes);
-            Assert.Contains("prefix2", cacheKey.Prefixes);
+            Assert.That("testKey", Is.EqualTo(cacheKey.Key));
+            Assert.That(cacheKey.Prefixes, Has.Member("prefix1"));
+            Assert.That(cacheKey.Prefixes, Has.Member("prefix2"));
         }
 
         [Test]
@@ -21,8 +21,8 @@ namespace PolyCache.Tests
             var cacheKey = new CacheKey("{0}Key", "{0}Prefix");
             var newCacheKey = cacheKey.Create(o => o.ToString(), "test");
 
-            Assert.AreEqual("testKey", newCacheKey.Key);
-            Assert.Contains("testPrefix", newCacheKey.Prefixes);
+            Assert.That("testKey", Is.EqualTo(newCacheKey.Key));
+            Assert.That(newCacheKey.Prefixes, Has.Member("testPrefix"));
         }
 
         [Test]
@@ -31,8 +31,8 @@ namespace PolyCache.Tests
             var cacheKey = new CacheKey("testKey", "testPrefix");
             var newCacheKey = cacheKey.Create(o => o.ToString());
 
-            Assert.AreEqual("testKey", newCacheKey.Key);
-            Assert.Contains("testPrefix", newCacheKey.Prefixes);
+            Assert.That("testKey", Is.EqualTo(newCacheKey.Key));
+            Assert.That(newCacheKey.Prefixes, Has.Member("testPrefix"));
         }
     }
 }
