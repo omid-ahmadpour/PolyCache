@@ -1,0 +1,35 @@
+name: Build and Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-test-pack-publish :
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore ./PolyCache/PolyCache.csproj
+
+    - name: Build
+      run: dotnet build ./PolyCache/PolyCache.csproj --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test ./PolyCache/PolyCache.csproj --no-restore --verbosity normal
+
+    - name: Pack
+      run: dotnet pack ./PolyCache/PolyCache.csproj --no-build --configuration Release --output nupkgs
+
+    - name: Publish to GitHub Packages
+      run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.PROFILE_TOKEN }} --source https://nuget.pkg.github.com/omid-ahmadpour/index.json
+
+    - name: Publish to Nuget Packages
+      run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
